@@ -1,5 +1,7 @@
 module.exports = async function handler(req, res) {
-  const { order_id, amount } = req.query;
+  const order_id = (req.query.order_id || '99999').replace(/'/g, '');
+  const amount = (req.query.amount || '0').replace(/[^0-9.]/g, '');
+  
   res.setHeader('Content-Type', 'text/html');
   res.send(`<!DOCTYPE html>
 <html lang="mn">
@@ -43,8 +45,8 @@ p{margin:0 0 16px;font-size:13px;color:#6b7280}
 </div>
 <script>
 const API = 'https://qpay-erdne-gkgy.vercel.app';
-const ORDER_ID = '${order_id || "99999"}';
-const AMOUNT = '${amount || "0"}';
+const ORDER_ID = '${order_id}';
+const AMOUNT = '${amount}';
 let invoiceId, pollTimer, countTimer;
 
 async function init() {
