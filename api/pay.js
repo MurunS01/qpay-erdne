@@ -60,7 +60,7 @@ module.exports = async function handler(req, res) {
 '    if (!data.success) throw new Error(data.error);\n' +
 '    invoiceId = data.invoice_id;\n' +
 '    document.getElementById("qr-img").src = "data:image/png;base64,"+data.qr_image;\n' +
-'    document.getElementById("amount-display").textContent = "\u20ae"+parseFloat(AMOUNT).toLocaleString();\n' +
+'    document.getElementById("amount-display").textContent = "₮" + (parseFloat(AMOUNT)/100).toLocaleString();
 '    document.getElementById("short-url").href = data.short_url;\n' +
 '    var banks = document.getElementById("banks");\n' +
 '    (data.deep_links||[]).forEach(function(b){\n' +
