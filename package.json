@@ -1,0 +1,17 @@
+{
+  "name": "qpay-erdne",
+  "version": "1.0.0",
+  "description": "QPay V2 payment gateway for ERDNE.COM Shopify store",
+  "main": "index.js",
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "scripts": {
+    "dev": "vercel dev",
+    "deploy": "vercel --prod"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "vercel": "^33.0.0"
+  }
+}
